@@ -713,6 +713,21 @@ footer {
     font-size: 0.85rem;
 }
 
+.footer-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 0.9rem;
+    transition: color var(--transition);
+}
+
+.footer-github:hover,
+.footer-github:focus-visible {
+    color: var(--mint);
+}
+
 /* =========================================
    BARRA DE ESTADO (estilo VS Code)
 ========================================= */
