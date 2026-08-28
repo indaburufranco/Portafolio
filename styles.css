@@ -53,6 +53,31 @@ a { color: inherit; }
 
 img { max-width: 100%; display: block; }
 
+header[id], section[id] { scroll-margin-top: 84px; }
+
+/* =========================================
+   ACCESIBILIDAD - saltar al contenido
+========================================= */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 300;
+    background: var(--accent);
+    color: #1a1206;
+    padding: 0.6rem 1rem;
+    border-radius: 0 0 8px 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top var(--transition);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* =========================================
    NAV - estilo pestañas de editor
 ========================================= */
@@ -298,6 +323,46 @@ img { max-width: 100%; display: block; }
 .btn:focus-visible, a:focus-visible, button:focus-visible {
     outline: 2px solid var(--mint);
     outline-offset: 2px;
+}
+
+/* =========================================
+   SOBRE MI - grid de highlights
+========================================= */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.about-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.about-item:hover {
+    border-color: var(--mint);
+    transform: translateY(-3px);
+}
+
+.about-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+.about-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    margin: 0.5rem 0 0.4rem;
+}
+
+.about-item p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
 }
 
 /* =========================================
@@ -588,6 +653,62 @@ img { max-width: 100%; display: block; }
 .contact-link:focus-visible {
     color: var(--accent);
     border-color: var(--accent);
+}
+
+.contact-copy {
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* =========================================
+   VOLVER ARRIBA
+========================================= */
+.back-to-top {
+    position: fixed;
+    right: 1.2rem;
+    bottom: 2.6rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #1a1206;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+    z-index: 150;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    box-shadow: 0 10px 24px -10px rgba(242,166,90,0.6);
+}
+
+/* =========================================
+   PAGINA 404
+========================================= */
+.not-found {
+    min-height: calc(100vh - 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
 }
 
 /* =========================================

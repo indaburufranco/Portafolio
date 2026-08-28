@@ -131,7 +131,13 @@ const sectionObserver = new IntersectionObserver(function (entries) {
         const id = entry.target.getAttribute('id');
 
         navAnchors.forEach(function (a) {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+            const isActive = a.getAttribute('href') === '#' + id;
+            a.classList.toggle('active', isActive);
+            if (isActive) {
+                a.setAttribute('aria-current', 'true');
+            } else {
+                a.removeAttribute('aria-current');
+            }
         });
 
         if (statusSection) {
@@ -151,4 +157,41 @@ if (statusPos) {
         const col = Math.max(1, Math.round(window.scrollX + (window.scrollY % 80)));
         statusPos.textContent = 'Ln ' + line + ', Col ' + col;
     }, { passive: true });
+}
+
+// ---- Año dinámico en el footer ----
+const yearEl = document.getElementById('year');
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
+
+// ---- Botón "volver arriba" ----
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+    window.addEventListener('scroll', function () {
+        backToTop.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+}
+
+// ---- Copiar email al portapapeles ----
+const copyEmailBtn = document.getElementById('copyEmail');
+if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async function () {
+        const email = copyEmailBtn.dataset.email;
+        const original = copyEmailBtn.textContent;
+        try {
+            await navigator.clipboard.writeText(email);
+            copyEmailBtn.textContent = '¡Copiado! ' + email;
+        } catch (err) {
+            copyEmailBtn.textContent = email;
+            window.location.href = 'mailto:' + email;
+        }
+        setTimeout(function () {
+            copyEmailBtn.textContent = original;
+        }, 1800);
+    });
 }

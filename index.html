@@ -5,26 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco Indaburu · Portafolio</title>
     <meta name="description" content="Franco Indaburu — Desarrollador Web Frontend en formación. Portafolio de proyectos.">
+    <meta name="theme-color" content="#12151c">
+    <meta name="color-scheme" content="dark">
     <link rel="canonical" href="https://portafolio-franco-indaburu.vercel.app/">
 
     <!-- Open Graph / redes sociales -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Franco Indaburu · Portafolio">
     <meta property="og:description" content="Desarrollador Web Frontend en formación. Construyo interfaces claras y funcionales.">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="https://portafolio-franco-indaburu.vercel.app/logo.png">
+    <meta property="og:url" content="https://portafolio-franco-indaburu.vercel.app/">
     <meta property="og:locale" content="es_AR">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Franco Indaburu · Portafolio">
     <meta name="twitter:description" content="Desarrollador Web Frontend en formación. Construyo interfaces claras y funcionales.">
-    <meta name="twitter:image" content="logo.png">
+    <meta name="twitter:image" content="https://portafolio-franco-indaburu.vercel.app/logo.png">
 
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Franco Indaburu",
+      "url": "https://portafolio-franco-indaburu.vercel.app/",
+      "email": "mailto:indaburufranco@gmail.com",
+      "sameAs": ["https://github.com/indaburufranco"],
+      "jobTitle": "Desarrollador Web Frontend",
+      "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+    }
+    </script>
 </head>
 <body>
+    <a href="#inicio" class="skip-link">Saltar al contenido</a>
 
     <!-- Navegación -->
     <nav class="navbar">
@@ -78,6 +95,23 @@
         <span class="eyebrow">sobre-mi.md</span>
         <h2>Sobre mí</h2>
         <p class="section-lead">Apasionado por la tecnología y la creación de experiencias web modernas y funcionales. Actualmente aprendiendo el oficio construyendo proyectos reales, uno a la vez, y cuidando cada detalle del camino de "no funciona" a "está listo".</p>
+        <div class="about-grid">
+            <div class="about-item">
+                <span class="about-num">01</span>
+                <h3>Proyectos reales</h3>
+                <p>Aprendo construyendo aplicaciones completas, no solo ejercicios sueltos.</p>
+            </div>
+            <div class="about-item">
+                <span class="about-num">02</span>
+                <h3>Cuidado del detalle</h3>
+                <p>Interfaces prolijas, accesibles y responsive en cualquier pantalla.</p>
+            </div>
+            <div class="about-item">
+                <span class="about-num">03</span>
+                <h3>Mejora constante</h3>
+                <p>Cada proyecto se revisa y se pule después de publicado, no queda estático.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Sección Stack -->
@@ -151,25 +185,30 @@
             <span class="prompt"><span class="sym">$</span> enviar --mensaje</span>
             <div class="form-row">
                 <label for="name" class="sr-only">Nombre</label>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" autocomplete="name" required>
                 <label for="email" class="sr-only">Email</label>
-                <input type="email" id="email" name="email" placeholder="Tu email" required>
+                <input type="email" id="email" name="email" placeholder="Tu email" autocomplete="email" required>
             </div>
             <label for="message" class="sr-only">Mensaje</label>
             <textarea id="message" name="message" rows="4" placeholder="Contame en qué puedo ayudarte" required></textarea>
+            <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="btn">Enviar mensaje</button>
             <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div class="contact-links">
-            <a href="mailto:indaburufranco@gmail.com" class="contact-link">indaburufranco@gmail.com</a>
+            <button type="button" class="contact-link contact-copy" id="copyEmail" data-email="indaburufranco@gmail.com">
+                indaburufranco@gmail.com
+            </button>
             <a href="https://github.com/indaburufranco" target="_blank" rel="noopener" class="contact-link">GitHub</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Franco Indaburu — Creado con esfuerzo y código.</p>
+        <p>&copy; <span id="year">2026</span> Franco Indaburu — Creado con esfuerzo y código.</p>
     </footer>
+
+    <button type="button" id="backToTop" class="back-to-top" aria-label="Volver arriba">↑</button>
 
     <!-- Barra de estado -->
     <div class="statusbar" aria-hidden="true">
