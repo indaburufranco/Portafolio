@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco Indaburu · Portafolio</title>
+    <meta name="description" content="Franco Indaburu — Desarrollador Web Frontend en formación. Portafolio de proyectos.">
+    <link rel="canonical" href="https://portafolio-franco-indaburu.vercel.app/">
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Franco Indaburu · Portafolio">
+    <meta property="og:description" content="Desarrollador Web Frontend en formación. Construyo interfaces claras y funcionales.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Franco Indaburu · Portafolio">
+    <meta name="twitter:description" content="Desarrollador Web Frontend en formación. Construyo interfaces claras y funcionales.">
+    <meta name="twitter:image" content="logo.png">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#inicio" aria-label="Inicio">
+                <img src="logo.png" alt="Logo Franco Indaburu" class="logo-img">
+            </a>
+            <span class="logo-tag">franco<span class="path">.indaburu</span></span>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio"><span class="num">01</span> Inicio</a></li>
+            <li><a href="#sobre-mi"><span class="num">02</span> Sobre mí</a></li>
+            <li><a href="#stack"><span class="num">03</span> Stack</a></li>
+            <li><a href="#proyectos"><span class="num">04</span> Proyectos</a></li>
+            <li><a href="#contacto"><span class="num">05</span> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Inicio -->
+    <header id="inicio" class="hero">
+        <div class="editor-window">
+            <div class="editor-titlebar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="editor-filename">portafolio.js</span>
+            </div>
+            <div class="editor-body">
+                <div class="gutter" aria-hidden="true">
+                    <span>1</span><span>2</span><span>3</span><span>4</span>
+                </div>
+                <div class="code-content">
+                    <p class="code-line comment">// desarrollador frontend en formación</p>
+                    <p class="code-line"><span class="kw">const</span> <span class="fn">desarrollador</span> <span class="punct">=</span> <span class="str">"Franco Indaburu"</span><span class="punct">;</span></p>
+                    <h1 class="hero-title">Construyo interfaces <span class="accent">claras</span> y funcionales.</h1>
+                    <p class="hero-role" id="heroRole" aria-live="polite"></p>
+                    <div class="hero-cta">
+                        <a href="#proyectos" class="btn">Ver proyectos →</a>
+                        <a href="#contacto" class="btn ghost">Contactarme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="section reveal">
+        <span class="eyebrow">sobre-mi.md</span>
+        <h2>Sobre mí</h2>
+        <p class="section-lead">Apasionado por la tecnología y la creación de experiencias web modernas y funcionales. Actualmente aprendiendo el oficio construyendo proyectos reales, uno a la vez, y cuidando cada detalle del camino de "no funciona" a "está listo".</p>
+    </section>
+
+    <!-- Sección Stack -->
+    <section id="stack" class="section reveal">
+        <span class="eyebrow">stack.json</span>
+        <h2>Con qué trabajo</h2>
+        <p class="section-lead">Las herramientas que uso hoy, agrupadas como en un archivo de dependencias.</p>
+        <div class="stack-block">
+            <p class="stack-line"><span class="punct">{</span></p>
+            <p class="stack-line stack-indent"><span class="str">"base"</span><span class="punct">:</span> <span class="tag-group"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></span><span class="punct">,</span></p>
+            <p class="stack-line stack-indent"><span class="str">"herramientas"</span><span class="punct">:</span> <span class="tag-group"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Figma</span></span><span class="punct">,</span></p>
+            <p class="stack-line stack-indent"><span class="str">"aprendiendo"</span><span class="punct">:</span> <span class="tag-group"><span class="tag tag-mint">React</span><span class="tag tag-mint">Node.js</span></span></p>
+            <p class="stack-line"><span class="punct">}</span></p>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="section reveal">
+        <span class="eyebrow">proyectos/</span>
+        <h2>Mis Proyectos</h2>
+        <p class="section-lead">Una selección de trabajos en curso. Cada uno documentado a medida que avanza.</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-head">
+                    <span>la-olla<span class="ext">.app</span></span>
+                    <span class="status-live">en producción</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>La Olla</h3>
+                    <p>Aplicación web para un negocio gastronómico, construida con React, Vite y Supabase como backend.</p>
+                    <div class="project-links">
+                        <a href="https://la-olla-one.vercel.app" target="_blank" rel="noopener" class="project-link">Ver demostración</a>
+                        <a href="https://github.com/indaburufranco/La-Olla" target="_blank" rel="noopener" class="project-link project-link-code">Código</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-head">
+                    <span>tienda-tech<span class="ext">.app</span></span>
+                    <span>en desarrollo</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>Tienda online de tecnología</h3>
+                    <p>E-commerce de productos tecnológicos construido con React, Vite y Tailwind CSS. Actualmente en desarrollo.</p>
+                    <div class="project-links">
+                        <span class="project-link project-link-disabled">Próximamente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card project-card-next">
+                <div class="project-card-head">
+                    <span>proyecto-03<span class="ext">.html</span></span>
+                    <span>por venir</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>Tu próximo proyecto acá</h3>
+                    <p>Sigo construyendo. Volvé pronto para ver el siguiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section reveal">
+        <span class="eyebrow">contacto.sh</span>
+        <h2>Contacto</h2>
+        <p class="section-lead">¿Te interesa trabajar conmigo o hacer una consulta? Escribime.</p>
+
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+            <span class="prompt"><span class="sym">$</span> enviar --mensaje</span>
+            <div class="form-row">
+                <label for="name" class="sr-only">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" id="email" name="email" placeholder="Tu email" required>
+            </div>
+            <label for="message" class="sr-only">Mensaje</label>
+            <textarea id="message" name="message" rows="4" placeholder="Contame en qué puedo ayudarte" required></textarea>
+            <button type="submit" class="btn">Enviar mensaje</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-links">
+            <a href="mailto:indaburufranco@gmail.com" class="contact-link">indaburufranco@gmail.com</a>
+            <a href="https://github.com/indaburufranco" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Franco Indaburu — Creado con esfuerzo y código.</p>
+    </footer>
+
+    <!-- Barra de estado -->
+    <div class="statusbar" aria-hidden="true">
+        <div class="statusbar-left">
+            <span class="status-item branch">⌥ main</span>
+            <span class="status-item" id="statusSection">inicio</span>
+        </div>
+        <div class="statusbar-right">
+            <span class="status-item">UTF-8</span>
+            <span class="status-item">LF</span>
+            <span class="status-item">HTML</span>
+            <span class="status-item" id="statusPos">Ln 1, Col 1</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

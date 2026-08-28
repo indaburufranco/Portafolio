@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portafolio-franco-indaburu.vercel.app/sitemap.xml
